@@ -12,7 +12,7 @@ type PopularDish = {
 
 const PopularDishes = ({ popularDishes }: { popularDishes: PopularDish }) => {
   return (
-    <section className='py-8 sm:py-16 lg:py-24'>
+    <section id='popular-dishes' className='py-8 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
           <Badge variant='outline' className='text-sm font-normal'>

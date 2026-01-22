@@ -12,6 +12,19 @@ import {
 
 import { cn } from '@/lib/utils'
 
+// Inline scroll function
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId)
+
+  if (element) {
+    const headerHeight = 80
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+  }
+}
+
 export type NavigationItem = {
   title: string
   href: string
@@ -33,23 +46,35 @@ export type NavigationSection = {
 
 type MenuNavigationProps = {
   navigationData: NavigationSection[]
+  activeSection?: string
   className?: string
 }
 
-const MenuNavigation = ({ navigationData, className }: MenuNavigationProps) => {
+const MenuNavigation = ({ navigationData, activeSection, className }: MenuNavigationProps) => {
   return (
     <NavigationMenu viewport={false} className={className}>
       <NavigationMenuList className='flex-wrap justify-start gap-0'>
         {navigationData.map(navItem => {
           if (navItem.href) {
+            // Extract section ID from href
+            const sectionId = navItem.href.replace('#', '')
+            const isActive = activeSection === sectionId && activeSection !== ''
+
             // Root link item
             return (
               <NavigationMenuItem key={navItem.title}>
                 <NavigationMenuLink
                   href={navItem.href}
+                  onClick={e => {
+                    e.preventDefault()
+                    scrollToSection(sectionId)
+                  }}
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    'text-muted-foreground hover:text-primary dark:hover:bg-accent/50 bg-transparent px-3 py-1.5 text-base!'
+                    'cursor-pointer bg-transparent px-3 py-1.5 text-base! transition-colors duration-200',
+                    isActive
+                      ? 'text-primary bg-primary/5 dark:bg-primary/10 font-medium'
+                      : 'text-muted-foreground hover:text-primary dark:hover:bg-accent/50'
                   )}
                 >
                   {navItem.title}

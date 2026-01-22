@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react'
 
+import Link from 'next/link'
 import { ArrowRightIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
@@ -13,7 +14,10 @@ type Stat = {
 
 const AboutUs = ({ stats }: { stats: Stat[] }) => {
   return (
-    <section className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'>
+    <section
+      id='about-us'
+      className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'
+    >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-3xl flex-col items-center justify-center space-y-4 text-center md:mb-16 lg:mb-24'>
@@ -26,10 +30,10 @@ const AboutUs = ({ stats }: { stats: Stat[] }) => {
             transformed the art of cooking into an unforgettable experience.
           </p>
           <Button size='lg' asChild className='group rounded-full text-base has-[>svg]:px-6'>
-            <a href='#'>
+            <Link href='#'>
               Read more
               <ArrowRightIcon className='transition-transform duration-200 group-hover:translate-x-0.5' />
-            </a>
+            </Link>
           </Button>
         </div>
 

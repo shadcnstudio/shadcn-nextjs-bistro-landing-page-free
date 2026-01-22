@@ -12,7 +12,10 @@ type ContactInfo = {
 
 const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
   return (
-    <section className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'>
+    <section
+      id='contact-us'
+      className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'
+    >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
@@ -34,10 +37,10 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
           />
 
           <div>
-            <h3 className='mb-2 text-2xl'>We’re here to serve you</h3>
+            <h3 className='mb-2 text-2xl'>We&apos;re here to serve you</h3>
             <p className='text-muted-foreground mb-10 text-lg'>
               We would love to hear from you, Whether you have a question, need a reservation, or want to learn more
-              about our offerings, we’re here to assist.
+              about our offerings, we&apos;re here to assist.
             </p>
 
             {/* Contact Info Grid */}

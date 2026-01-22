@@ -1,14 +1,18 @@
 export const footerData = [
   {
-    title: 'sdfdsf',
-    href: '#'
+    title: 'About Us',
+    href: '#about-us'
   },
   {
-    title: 'Licence',
-    href: '#'
+    title: 'Testimonials',
+    href: '#testimonials'
   },
   {
-    title: 'Article',
-    href: '#'
+    title: 'Contact us',
+    href: '#contact-us'
+  },
+  {
+    title: 'Offers',
+    href: '#offers'
   }
 ]

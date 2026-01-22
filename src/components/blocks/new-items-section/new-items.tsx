@@ -1,5 +1,7 @@
 import { ArrowRightIcon } from 'lucide-react'
 
+import Link from 'next/link'
+
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardTitle, CardDescription, CardHeader, CardFooter } from '@/components/ui/card'
@@ -14,7 +16,7 @@ type NewItem = {
 
 const NewItems = ({ newItems }: { newItems: NewItem }) => {
   return (
-    <section className='py-8 sm:py-16 lg:py-24'>
+    <section id='new-items' className='py-8 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
@@ -36,7 +38,7 @@ const NewItems = ({ newItems }: { newItems: NewItem }) => {
               </CardContent>
               <CardHeader className='mb-2 gap-3'>
                 <CardTitle className='text-xl'>
-                  <a href={item.blogLink}>{item.title}</a>
+                  <Link href={item.blogLink}>{item.title}</Link>
                 </CardTitle>
                 <CardDescription className='text-base'>{item.description}</CardDescription>
               </CardHeader>
@@ -46,10 +48,10 @@ const NewItems = ({ newItems }: { newItems: NewItem }) => {
                   size='lg'
                   asChild
                 >
-                  <a href={item.blogLink}>
+                  <Link href={item.blogLink}>
                     Full menu
                     <ArrowRightIcon className='transition-transform duration-200 group-hover:translate-x-0.5' />
-                  </a>
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
