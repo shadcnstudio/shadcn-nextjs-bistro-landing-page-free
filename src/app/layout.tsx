@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Merriweather, Outfit } from 'next/font/google'
 import type { Metadata } from 'next'
 
 import { ThemeProvider } from '@/components/theme-provider'
@@ -9,13 +9,18 @@ import { cn } from '@/lib/utils'
 
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const outfitSans = Outfit({
+  variable: '--font-outfit-sans',
   subsets: ['latin']
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const merriweatherMono = Merriweather({
+  variable: '--font-merriweather-mono',
+  subsets: ['latin']
+})
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
   subsets: ['latin']
 })
 
@@ -101,7 +106,12 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html
       lang='en'
-      className={cn(geistSans.variable, geistMono.variable, 'flex min-h-full w-full scroll-smooth antialiased')}
+      className={cn(
+        outfitSans.variable,
+        merriweatherMono.variable,
+        geistSans.variable,
+        'flex min-h-full w-full scroll-smooth antialiased'
+      )}
       suppressHydrationWarning
     >
       <body className='flex min-h-full w-full flex-auto flex-col'>
