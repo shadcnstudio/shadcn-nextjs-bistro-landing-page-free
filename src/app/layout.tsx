@@ -26,12 +26,13 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Template Name',
-    default: 'Template Name - Template Slogan'
+    template: 'Demo: %s - Bistro | Shadcn Studio',
+    default: 'Demo: Bistro - Restaurant Landing Page | Shadcn Studio'
   },
-  description: 'Template Description',
+  description:
+    'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.',
   robots: 'index,follow',
-  keywords: ['keyword1', 'keyword2', 'keyword3'],
+  keywords: ['Restaurant', 'Dining', 'Food'],
   icons: {
     icon: [
       {
@@ -75,12 +76,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`),
   openGraph: {
     title: {
-      template: '%s - Template Name',
-      default: 'Template Name - Template Slogan'
+      template: 'Demo: %s - Bistro | Shadcn Studio',
+      default: 'Demo: Bistro - Restaurant Landing Page | Shadcn Studio'
     },
-    description: 'Template Description',
+    description:
+      'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.',
     type: 'website',
-    siteName: 'Template Name',
+    siteName: 'Bistro',
     url: `${process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'}`,
     images: [
       {
@@ -95,10 +97,11 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: {
-      template: '%s - Template Name',
-      default: 'Template Name - Template Slogan'
+      template: 'Demo: %s - Bistro | Shadcn Studio',
+      default: 'Demo: Bistro - Restaurant Landing Page | Shadcn Studio'
     },
-    description: 'Template Description'
+    description:
+      'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.'
   }
 }
 

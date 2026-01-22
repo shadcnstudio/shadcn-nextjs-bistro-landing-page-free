@@ -2,10 +2,8 @@ User-Agent: *
 Allow: /
 
 # Sitemap locations
-Sitemap: https://shadcnstudio.com/sitemap.xml
+Sitemap: https://shadcn-nextjs-bistro-landing-page.vercel.app/sitemap.xml
 
 # Disallow specific paths
 Disallow: /private/*
 Disallow: /*?*                        # Disallow URLs with a query string
-Disallow: /login                      # Exclude login page
-Disallow: /register                   # Exclude registration page

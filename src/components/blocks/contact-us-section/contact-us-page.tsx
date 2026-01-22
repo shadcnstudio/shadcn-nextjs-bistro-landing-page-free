@@ -12,7 +12,7 @@ type ContactInfo = {
 
 const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
   return (
-    <section className='bg-muted py-8 sm:py-16 lg:py-24'>
+    <section className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>

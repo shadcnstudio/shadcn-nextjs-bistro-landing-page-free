@@ -21,8 +21,9 @@ const jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       '@id': `${process.env.NEXT_PUBLIC_APP_URL}#website`,
-      name: 'Template Name',
-      description: 'Template Description',
+      name: 'Bistro',
+      description:
+        'Enjoy fresh ingredients, thoughtfully prepared meals, and a welcoming space designed for memorable moments. Experience bistro dining made simple and delicious.',
       url: `${process.env.NEXT_PUBLIC_APP_URL}`,
       inLanguage: 'en-US'
     }

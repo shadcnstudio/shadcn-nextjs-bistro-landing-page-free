@@ -13,7 +13,7 @@ type Stat = {
 
 const AboutUs = ({ stats }: { stats: Stat[] }) => {
   return (
-    <section className='bg-muted py-8 sm:py-16 lg:py-24'>
+    <section className='before:bg-muted relative py-8 before:absolute before:inset-0 before:-z-10 before:skew-y-3 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-3xl flex-col items-center justify-center space-y-4 text-center md:mb-16 lg:mb-24'>
@@ -22,7 +22,7 @@ const AboutUs = ({ stats }: { stats: Stat[] }) => {
           </Badge>
           <h2 className='text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl'>Our story & achievements</h2>
           <p className='text-muted-foreground text-xl'>
-            At Restaurant, every dish tells a story. With years of dedication and a passion for fine dining, we’ve
+            At Restaurant, every dish tells a story. With years of dedication and a passion for fine dining, we&apos;ve
             transformed the art of cooking into an unforgettable experience.
           </p>
           <Button size='lg' asChild className='group rounded-full text-base has-[>svg]:px-6'>

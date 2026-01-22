@@ -85,7 +85,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }))
 
   return (
-    <section className='flex-1 py-12 sm:py-16 lg:py-24'>
+    <section className='before:border-primary/20 relative flex-1 py-12 before:absolute before:inset-0 before:-z-10 before:-skew-y-3 before:border-b sm:py-16 lg:py-24'>
       <div className='mx-auto flex h-full max-w-7xl flex-col gap-16 px-4 sm:px-6 lg:px-8'>
         {/* Hero Header */}
         <div className='grid grid-cols-1 gap-6 gap-y-12 md:gap-y-16 lg:grid-cols-5'>
