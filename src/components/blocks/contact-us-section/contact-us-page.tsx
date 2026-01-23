@@ -31,9 +31,9 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
 
         <div className='grid items-center gap-12 lg:grid-cols-2'>
           <img
-            src='https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/contact-us/image-1.png'
+            src='/images/contact-us-01.webp'
             alt='Contact illustration'
-            className='size-full rounded-md object-cover max-lg:max-h-70'
+            className='size-full object-cover max-lg:max-h-70'
           />
 
           <div>
@@ -46,7 +46,7 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
             {/* Contact Info Grid */}
             <div className='grid gap-6 sm:grid-cols-2'>
               {contactInfo.map((info, index) => (
-                <Card className='bg-background shadow-none' key={index}>
+                <Card className='bg-background rounded-none shadow-none' key={index}>
                   <CardContent className='flex flex-col items-center gap-4 text-center'>
                     <Avatar className='size-9 border'>
                       <AvatarFallback className='bg-transparent [&>svg]:size-5'>

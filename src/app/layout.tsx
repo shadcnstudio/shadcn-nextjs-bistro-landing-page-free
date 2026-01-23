@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { Geist, Merriweather, Outfit } from 'next/font/google'
+import { Geist_Mono, Merriweather, Outfit, Kaushan_Script } from 'next/font/google'
 import type { Metadata } from 'next'
 
 import { ThemeProvider } from '@/components/theme-provider'
@@ -14,13 +14,19 @@ const outfitSans = Outfit({
   subsets: ['latin']
 })
 
-const merriweatherMono = Merriweather({
-  variable: '--font-merriweather-mono',
+const merriweatherSerif = Merriweather({
+  variable: '--font-merriweather-serif',
   subsets: ['latin']
 })
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin']
+})
+
+const kaushanScript = Kaushan_Script({
+  weight: '400',
+  variable: '--font-kaushan-script',
   subsets: ['latin']
 })
 
@@ -111,8 +117,9 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
       lang='en'
       className={cn(
         outfitSans.variable,
-        merriweatherMono.variable,
-        geistSans.variable,
+        merriweatherSerif.variable,
+        geistMono.variable,
+        kaushanScript.variable,
         'flex min-h-full w-full scroll-smooth antialiased'
       )}
       suppressHydrationWarning

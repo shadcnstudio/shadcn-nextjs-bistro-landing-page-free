@@ -39,14 +39,10 @@ const AboutUs = ({ stats }: { stats: Stat[] }) => {
 
         {/* Video player and stats */}
         <div className='relative mb-8 h-full w-full max-lg:space-y-6 sm:mb-16 lg:mb-24'>
-          <img
-            src='https://cdn.shadcnstudio.com/ss-assets/blocks/marketing/about-us/image-44.png'
-            alt='About us illustration'
-            className='h-full w-full rounded-xs object-cover'
-          />
+          <img src='/images/about-us.webp' alt='About us illustration' className='h-full w-full object-cover' />
 
           {/* Stats card overlapping the video section */}
-          <div className='bg-background grid gap-10 rounded-[4px] border p-8 sm:max-lg:grid-cols-2 lg:absolute lg:-bottom-25 lg:left-1/2 lg:w-3/4 lg:-translate-x-1/2 lg:grid-cols-4 lg:px-10'>
+          <div className='bg-background grid gap-10 border p-8 sm:max-lg:grid-cols-2 lg:absolute lg:-bottom-25 lg:left-1/2 lg:w-3/4 lg:-translate-x-1/2 lg:grid-cols-4 lg:px-10'>
             {stats.map((stat, index) => (
               <div key={index} className='flex flex-col items-center justify-center gap-2.5 text-center'>
                 <div className='flex size-7 items-center justify-center [&>svg]:size-7'>

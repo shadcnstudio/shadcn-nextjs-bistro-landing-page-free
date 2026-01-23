@@ -32,9 +32,9 @@ const NewItems = ({ newItems }: { newItems: NewItem }) => {
 
         <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {newItems.map((item, index) => (
-            <Card className='pt-0 shadow-none max-lg:last:col-span-full' key={index}>
+            <Card className='rounded-none pt-0 shadow-none max-lg:last:col-span-full' key={index}>
               <CardContent className='px-0'>
-                <img src={item.img} alt={item.alt} className='aspect-video h-60 w-full rounded-t-xl object-cover' />
+                <img src={item.img} alt={item.alt} className='aspect-video h-60 w-full object-cover' />
               </CardContent>
               <CardHeader className='mb-2 gap-3'>
                 <CardTitle className='text-xl'>

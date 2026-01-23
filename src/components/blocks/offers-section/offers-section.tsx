@@ -7,6 +7,10 @@ type GalleryImage = {
   src: string
   alt: string
   className?: string
+  offerText: {
+    text: string
+    className?: string
+  }
   offerButton: {
     text: string
     link: string
@@ -38,14 +42,23 @@ const Gallery = ({ galleryImage }: { galleryImage: GalleryImage }) => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className='h-full w-full rounded-[2px] object-cover transition-transform duration-300 hover:scale-105'
+                className='h-full w-full object-cover transition-transform duration-300 hover:scale-105'
               />
+
+              {image.offerText && (
+                <div className={cn('absolute', image.offerText.className)}>
+                  <p className='font-(family-name:--font-kaushan-script) text-lg text-white md:text-xl lg:text-2xl xl:text-3xl'>
+                    {image.offerText.text}
+                  </p>
+                </div>
+              )}
+
               {image.offerButton && (
                 <div className={cn('absolute', image.offerButton.className)}>
                   <Button
                     size='lg'
                     className={cn(
-                      'relative w-fit overflow-hidden rounded-full text-base before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:transition-[background-position_0s_ease] before:duration-1000 group-hover:before:bg-[position:-100%_0,0_0] has-[>svg]:px-6 max-sm:px-3 max-sm:py-1 max-sm:text-sm dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.2)_50%,transparent_75%,transparent_100%)]'
+                      'relative w-fit overflow-hidden rounded-full text-base before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:transition-[background-position_0s_ease] before:duration-1000 group-hover:before:bg-[position:-100%_0,0_0] has-[>svg]:px-6 max-lg:px-3 max-sm:px-2.5 max-sm:text-sm dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.2)_50%,transparent_75%,transparent_100%)]'
                     )}
                   >
                     {image.offerButton.text}

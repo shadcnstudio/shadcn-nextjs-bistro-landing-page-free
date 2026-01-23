@@ -12,6 +12,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import MenuDropdown from '@/components/blocks/menu-dropdown'
 import MenuNavigation from '@/components/blocks/menu-navigation'
 import type { NavigationSection } from '@/components/blocks/menu-navigation'
+import { ModeToggle } from '@/components/layout/mode-toggle'
 
 import { cn } from '@/lib/utils'
 
@@ -112,6 +113,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
         {/* Actions */}
         <div className='flex gap-4'>
+          <ModeToggle />
           <Button className='rounded-full max-sm:hidden' asChild>
             <Link href='#contact-us'>Book table</Link>
           </Button>

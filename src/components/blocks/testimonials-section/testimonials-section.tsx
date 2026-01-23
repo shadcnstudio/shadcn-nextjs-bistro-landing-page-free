@@ -19,7 +19,7 @@ const TestimonialsComponent = ({ testimonials }: TestimonialsComponentProps) => 
   return (
     <section
       id='testimonials'
-      className='before:border-primary/20 relative py-8 before:absolute before:inset-0 before:-z-10 before:-skew-y-3 before:border-b sm:py-16 lg:py-24'
+      className='before:border-primary/20 relative py-14 before:absolute before:inset-0 before:-z-10 before:-skew-y-3 before:border-b sm:py-28 lg:py-36'
     >
       <Carousel
         className='mx-auto flex max-w-7xl gap-12 px-4 max-sm:flex-col sm:items-center sm:gap-16 sm:px-6 lg:gap-24 lg:px-8'
@@ -60,7 +60,7 @@ const TestimonialsComponent = ({ testimonials }: TestimonialsComponentProps) => 
           <CarouselContent className='sm:-ml-6'>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className='sm:pl-6 lg:basis-1/2'>
-                <Card className='hover:border-primary h-full transition-colors duration-300'>
+                <Card className='hover:border-primary h-full rounded-none transition-colors duration-300'>
                   <CardContent className='space-y-5'>
                     <div className='flex items-center gap-3'>
                       <Avatar className='size-10 rounded-full'>

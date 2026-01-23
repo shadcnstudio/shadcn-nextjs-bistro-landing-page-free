@@ -30,7 +30,7 @@ const PopularDishes = ({ popularDishes }: { popularDishes: PopularDish }) => {
           {popularDishes.map((member, index) => (
             <Card
               key={index}
-              className='hover:border-primary overflow-hidden py-0 shadow-none transition-colors duration-300'
+              className='hover:border-primary overflow-hidden rounded-none py-0 shadow-none transition-colors duration-300'
             >
               <CardContent className='px-0'>
                 <div className='bg-muted'>
