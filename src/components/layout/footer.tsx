@@ -23,7 +23,7 @@ const Footer = () => {
             <Link
               key={item.title}
               href={item.href}
-              className='text-muted-foreground hover:text-primary text-base! font-medium hover:bg-transparent'
+              className='text-foreground hover:text-primary text-base! hover:bg-transparent'
             >
               {item.title}
             </Link>
@@ -31,16 +31,16 @@ const Footer = () => {
         </div>
 
         <div className='flex items-center gap-4'>
-          <Link href='#' target='_blank'>
+          <Link href='#' target='_blank' className='hover:text-primary'>
             <FacebookIcon className='size-5' />
           </Link>
-          <Link href='#' target='_blank'>
+          <Link href='#' target='_blank' className='hover:text-primary'>
             <InstagramIcon className='size-5' />
           </Link>
-          <Link href='#' target='_blank'>
+          <Link href='#' target='_blank' className='hover:text-primary'>
             <TwitterIcon className='size-5' />
           </Link>
-          <Link href='#' target='_blank'>
+          <Link href='#' target='_blank' className='hover:text-primary'>
             <YoutubeIcon className='size-5' />
           </Link>
         </div>
@@ -49,7 +49,7 @@ const Footer = () => {
       <Separator />
 
       <div className='mx-auto flex max-w-7xl justify-center px-4 py-8 sm:px-6'>
-        <p className='text-center font-medium text-balance'>
+        <p className='text-muted-foreground text-center text-balance'>
           {`©${new Date().getFullYear()}`}{' '}
           <Link href='/#home' className='hover:underline'>
             Bistro

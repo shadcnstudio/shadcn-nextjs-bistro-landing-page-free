@@ -40,17 +40,17 @@ const TestimonialsComponent = ({ testimonials }: TestimonialsComponentProps) => 
           </h2>
 
           <p className='text-muted-foreground text-xl'>
-            here&apos;s how our customers enjoyed our restaurant and the services we offer.
+            Here&apos;s how our customers enjoyed our restaurant and the services we offer.
           </p>
 
           <div className='flex items-center gap-4'>
             <CarouselPrevious
               variant='default'
-              className='disabled:bg-primary/10 disabled:text-primary static translate-y-0 rounded-full disabled:opacity-100'
+              className='disabled:bg-primary/10 disabled:text-primary static size-9 translate-y-0 cursor-pointer rounded-full disabled:opacity-100'
             />
             <CarouselNext
               variant='default'
-              className='disabled:bg-primary/10 disabled:text-primary static translate-y-0 rounded-full disabled:opacity-100'
+              className='disabled:bg-primary/10 disabled:text-primary static size-9 translate-y-0 cursor-pointer rounded-full disabled:opacity-100'
             />
           </div>
         </div>

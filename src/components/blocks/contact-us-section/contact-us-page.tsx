@@ -20,7 +20,7 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
           <Badge variant='outline' className='text-sm font-normal'>
-            Contact us
+            Contact Us
           </Badge>
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Get in touch with us </h2>
           <p className='text-muted-foreground text-xl'>
@@ -46,7 +46,10 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
             {/* Contact Info Grid */}
             <div className='grid gap-6 sm:grid-cols-2'>
               {contactInfo.map((info, index) => (
-                <Card className='bg-background rounded-none shadow-none' key={index}>
+                <Card
+                  className='bg-background hover:border-primary rounded-none shadow-none transition-colors duration-300'
+                  key={index}
+                >
                   <CardContent className='flex flex-col items-center gap-4 text-center'>
                     <Avatar className='size-9 border'>
                       <AvatarFallback className='bg-transparent [&>svg]:size-5'>

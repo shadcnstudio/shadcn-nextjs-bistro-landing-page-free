@@ -104,7 +104,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
               dish is crafted to delight your senses.
             </p>
 
-            <div className='flex items-center gap-4'>
+            <div className='flex items-center gap-3.5'>
               <Button
                 asChild
                 size='lg'
@@ -136,7 +136,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
             <CarouselContent>
               {menudata.map(item => (
                 <CarouselItem key={item.id} className='flex w-full items-center justify-center'>
-                  <img src={item.img} alt={item.imgAlt} className='obeh size-95 object-contain' />
+                  <img src={item.img} alt={item.imgAlt} className='size-95 object-contain' />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -188,11 +188,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
                   key={item.id}
                   className='flex h-full min-h-14 w-full justify-center gap-4 px-6 lg:items-center'
                 >
-                  <img
-                    src={item.userAvatar}
-                    alt={item.imgAlt}
-                    className='border-background size-10 rounded-full border-4 drop-shadow-lg'
-                  />
+                  <img src={item.userAvatar} alt={item.imgAlt} className='size-10 rounded-full' />
                   <Separator orientation='vertical' className='bg-primary hidden !h-6 !w-0.5 !rounded-full sm:block' />
                   <p className='text-card-foreground'>{item.userComment}</p>
                 </CarouselItem>

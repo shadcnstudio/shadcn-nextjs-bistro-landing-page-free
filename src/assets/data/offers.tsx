@@ -1,7 +1,7 @@
 export const GalleryImage = [
   {
     src: '/images/offers/offers-image-01.webp',
-    alt: 'Mountain lake reflection',
+    alt: 'Launch deal',
     className: 'col-span-2 row-span-2',
     offerText: {
       text: 'Lunch Deal - $9.99',
@@ -15,7 +15,7 @@ export const GalleryImage = [
   },
   {
     src: '/images/offers/offers-image-02.webp',
-    alt: 'Coastal mountain',
+    alt: 'Bogo special',
     className: 'col-span-2 max-h-60',
     offerText: {
       text: 'BOGO Special',
@@ -29,7 +29,7 @@ export const GalleryImage = [
   },
   {
     src: '/images/offers/offers-image-03.webp',
-    alt: 'Mountain range',
+    alt: 'Family meal',
     className: 'col-span-2 max-h-60',
     offerText: {
       text: 'Family Meal – $29.99',
