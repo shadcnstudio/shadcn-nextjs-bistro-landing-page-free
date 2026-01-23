@@ -19,7 +19,7 @@ jobs:
       - name: ⬇️ Checkout current repo
         uses: actions/checkout@v4
         with:
-          path: shadcn-studio/internal
+          path: shadcn-studio/${{ github.event.repository.name }}
 
       - name: ⬇️ Checkout automation-scripts repo
         uses: actions/checkout@v4
@@ -33,13 +33,13 @@ jobs:
         run: pnpm i
 
       - name: ⬇️ Install packages in current repo
-        working-directory: shadcn-studio/internal
+        working-directory: shadcn-studio/${{ github.event.repository.name }}
         run: pnpm i
 
       - name: 📦 Build
         working-directory: automation-scripts/nextjs
-        run: pnpm install vercel && pnpm tsx ./src/shadcn-studio/template/generateBuild.ts $([[ "${{ github.ref_name == 'main' }}" == "true" ]] && echo --prod) --vercel-token ${{ secrets.VERCEL_TOKEN }}
+        run: pnpm install vercel && pnpm tsx ./src/shadcn-studio/template/generateBuild.ts $([[ "${{ github.ref_name == 'main' }}" == "true" ]] && echo --prod) --vercel-token ${{ secrets.VERCEL_TOKEN }} --repo-name ${{ github.event.repository.name }}
 
       - name: 🚀 Deploy to Vercel
-        working-directory: shadcn-studio/internal
+        working-directory: shadcn-studio/${{ github.event.repository.name }}
         run: pnpm install -w vercel && pnpm exec vercel $([[ "${{ github.ref_name == 'main' }}" == "true" ]] && echo --prod) --prebuilt --token ${{ secrets.VERCEL_TOKEN }}
