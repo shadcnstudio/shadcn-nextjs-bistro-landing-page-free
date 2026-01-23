@@ -21,7 +21,7 @@ const NewItems = ({ newItems }: { newItems: NewItem }) => {
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
           <Badge variant='outline' className='text-sm font-normal'>
-            New items
+            New Items
           </Badge>
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Fresh menu items</h2>
           <p className='text-muted-foreground text-xl'>
