@@ -31,16 +31,16 @@ const Footer = () => {
         </div>
 
         <div className='flex items-center gap-4'>
-          <Link href='#' target='_blank' className='hover:text-primary'>
+          <Link href='#' className='hover:text-primary'>
             <FacebookIcon className='size-5' />
           </Link>
-          <Link href='#' target='_blank' className='hover:text-primary'>
+          <Link href='#' className='hover:text-primary'>
             <InstagramIcon className='size-5' />
           </Link>
-          <Link href='#' target='_blank' className='hover:text-primary'>
+          <Link href='#' className='hover:text-primary'>
             <TwitterIcon className='size-5' />
           </Link>
-          <Link href='#' target='_blank' className='hover:text-primary'>
+          <Link href='#' className='hover:text-primary'>
             <YoutubeIcon className='size-5' />
           </Link>
         </div>

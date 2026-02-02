@@ -14,20 +14,7 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 
-import { cn } from '@/lib/utils'
-
-// Inline scroll function
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-
-  if (element) {
-    const headerHeight = 80
-    const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - headerHeight
-
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-  }
-}
+import { cn, scrollToSection } from '@/lib/utils'
 
 export type NavigationItem = {
   title: string
@@ -59,7 +46,7 @@ const MenuDropdown = ({ trigger, navigationData, activeSection, align = 'start' 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>{trigger}</DropdownMenuTrigger>
-      <DropdownMenuContent className='w-56' align={align}>
+      <DropdownMenuContent className='mt-1 w-[min(93vw,800px)]' align={align}>
         {navigationData.map(navItem => {
           if (navItem.href) {
             // Extract section ID from href

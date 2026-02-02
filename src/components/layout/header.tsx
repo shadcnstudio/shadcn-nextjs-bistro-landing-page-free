@@ -15,44 +15,59 @@ import type { NavigationSection } from '@/components/blocks/menu-navigation'
 import { ModeToggle } from '@/components/layout/mode-toggle'
 
 import { cn } from '@/lib/utils'
+import { scrollToSection } from '@/lib/utils'
 
 import BistroLogo from '@/assets/svg/bistro-logo'
 
-// Inline active section hook
+// Active section hook based on which section is closest to the top of the
+// viewport (accounts for header offset). This is more deterministic than
+// an IntersectionObserver for this layout and avoids lingering active states.
 const useActiveSection = (sectionIds: string[]) => {
   const [activeSection, setActiveSection] = useState<string>('')
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        const intersectingSections = entries.filter(entry => entry.isIntersecting)
+    if (!sectionIds || sectionIds.length === 0) return
 
-        if (intersectingSections.length === 0) {
-          setActiveSection('')
-        } else {
-          const mostVisible = intersectingSections.reduce((prev, current) =>
-            current.intersectionRatio > prev.intersectionRatio ? current : prev
-          )
+    const headerHeight = 80
 
-          setActiveSection(mostVisible.target.id)
+    const update = () => {
+      let closestId = ''
+      let minDistance = Number.POSITIVE_INFINITY
+
+      sectionIds.forEach(id => {
+        const el = document.getElementById(id)
+
+        if (!el) return
+
+        const rectTop = el.getBoundingClientRect().top - headerHeight
+        const distance = Math.abs(rectTop)
+
+        if (distance < minDistance) {
+          minDistance = distance
+          closestId = id
         }
-      },
-      {
-        threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
-        rootMargin: '-100px 0px -50% 0px'
-      }
-    )
+      })
 
-    sectionIds.forEach(id => {
-      const element = document.getElementById(id)
+      // Only set an active section when it's reasonably close to the
+      // viewport top. This prevents a stale/incorrect active state when
+      // the user has scrolled elsewhere on the page.
+      const activationThreshold = 200 // px
 
-      if (element) {
-        observer.observe(element)
+      if (minDistance <= activationThreshold) {
+        setActiveSection(closestId)
+      } else {
+        setActiveSection('')
       }
-    })
+    }
+
+    // Update on scroll and resize and run once to initialise
+    window.addEventListener('scroll', update, { passive: true })
+    window.addEventListener('resize', update)
+    update()
 
     return () => {
-      observer.disconnect()
+      window.removeEventListener('scroll', update)
+      window.removeEventListener('resize', update)
     }
   }, [sectionIds])
 
@@ -118,14 +133,30 @@ const Header = ({ navigationData, className }: HeaderProps) => {
             className='group relative ml-4 w-fit overflow-hidden rounded-full text-base before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:transition-[background-position_0s_ease] before:duration-1000 hover:before:bg-[position:-100%_0,0_0] has-[>svg]:px-6 max-sm:hidden dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.2)_50%,transparent_75%,transparent_100%)]'
             asChild
           >
-            <Link href='#contact-us'>Book table</Link>
+            <Link
+              href='#contact-us'
+              onClick={e => {
+                e.preventDefault()
+                scrollToSection('contact-us')
+              }}
+            >
+              Book table
+            </Link>
           </Button>
 
           {/* Mobile book table button */}
           <Tooltip>
             <TooltipTrigger asChild>
               <Button className='ml-4 rounded-full sm:hidden' asChild>
-                <Link href='#contact-us'>Book table</Link>
+                <Link
+                  href='#contact-us'
+                  onClick={e => {
+                    e.preventDefault()
+                    scrollToSection('contact-us')
+                  }}
+                >
+                  Book table
+                </Link>
               </Button>
             </TooltipTrigger>
             <TooltipContent>Book table</TooltipContent>

@@ -120,7 +120,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
                 asChild
                 className='bg-primary/10 hover:bg-primary/20 text-primary rounded-full text-base'
               >
-                <Link href='#'>Book table</Link>
+                <Link href='#contact-us'>Book table</Link>
               </Button>
             </div>
           </div>
@@ -157,7 +157,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
               {menudata.map((item, index) => (
                 <CarouselItem
                   key={item.id}
-                  className={cn('basis-1/2 cursor-pointer sm:basis-1/3 md:basis-1/4 lg:basis-1/3 xl:basis-1/4')}
+                  className={cn('basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/3 xl:basis-1/4')}
                   onClick={() => handleThumbClick(index)}
                 >
                   <div className='relative flex h-33 items-center justify-center'>

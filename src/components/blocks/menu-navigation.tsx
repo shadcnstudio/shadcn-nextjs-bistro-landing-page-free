@@ -10,20 +10,7 @@ import {
   navigationMenuTriggerStyle
 } from '@/components/ui/navigation-menu'
 
-import { cn } from '@/lib/utils'
-
-// Inline scroll function
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-
-  if (element) {
-    const headerHeight = 80
-    const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - headerHeight
-
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-  }
-}
+import { cn, scrollToSection } from '@/lib/utils'
 
 export type NavigationItem = {
   title: string
