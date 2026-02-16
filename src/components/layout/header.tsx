@@ -123,7 +123,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
         <MenuNavigation
           navigationData={navigationData}
           activeSection={activeSection}
-          className='max-lg:hidden [&_[data-slot="navigation-menu-list"]]:gap-1'
+          className='**:data-[slot=navigation-menu-list]:gap-1 max-lg:hidden'
         />
 
         {/* Actions */}
