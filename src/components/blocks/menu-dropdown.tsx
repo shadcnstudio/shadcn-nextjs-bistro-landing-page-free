@@ -81,7 +81,7 @@ const MenuDropdown = ({ trigger, navigationData, activeSection, align = 'start' 
                   <DropdownMenuItem onSelect={event => event.preventDefault()} className='justify-between'>
                     {navItem.icon}
                     <span className='flex-1'>{navItem.title}</span>
-                    <ChevronRightIcon className='shrink-0 transition-transform [[data-state="open"]>&]:rotate-90' />
+                    <ChevronRightIcon className='shrink-0 transition-transform [[data-state=open]>&]:rotate-90' />
                   </DropdownMenuItem>
                 </CollapsibleTrigger>
                 <CollapsibleContent className='pl-2'>
