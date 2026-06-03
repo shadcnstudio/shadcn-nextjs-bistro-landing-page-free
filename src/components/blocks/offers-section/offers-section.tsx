@@ -40,7 +40,7 @@ const Gallery = ({ galleryImage }: { galleryImage: GalleryImage }) => {
         {/* Gallery Grid */}
         <div className='grid grid-cols-2 gap-6 md:grid-cols-4'>
           {galleryImage.map((image, index) => (
-            <div key={index} className={cn('group relative overflow-hidden rounded-lg', image.className)}>
+            <div key={index} className={cn('group relative overflow-hidden rounded-none', image.className)}>
               <img
                 src={image.src}
                 alt={image.alt}

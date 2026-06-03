@@ -135,6 +135,14 @@ const eslintConfig = defineConfig([
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-var-requires': 'off'
     }
+  },
+  {
+    // Disable strict react-hooks/set-state-in-effect rule for core shadcn/ui components
+    // These are third-party components that may not follow the latest React patterns
+    files: ['src/components/ui/**/*.tsx', 'src/components/ui/**/*.ts'],
+    rules: {
+      'react-hooks/set-state-in-effect': 'off'
+    }
   }
 ])
 

@@ -21,7 +21,7 @@ const AboutUs = ({ stats }: { stats: Stat[] }) => {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-3xl flex-col items-center justify-center space-y-4 text-center md:mb-16 lg:mb-24'>
-          <Badge variant='outline' className='text-sm font-normal'>
+          <Badge variant='outline' className='h-auto text-sm font-normal'>
             About Us
           </Badge>
           <h2 className='text-2xl font-semibold tracking-tight md:text-3xl lg:text-4xl'>Our story & achievements</h2>

@@ -4,6 +4,14 @@
 
 All notable changes to this template will be documented in this file
 
+## v2.0.0 (2026-06-05)
+
+### Updated
+
+- Upgraded to shadcn/ui v4 release with Radix UI - Vega styling.
+- Refactored all components and refreshed the entire template.
+- Updated dependencies to latest versions.
+
 ## v1.0.0 (2026-01-23)
 
 ### Added
