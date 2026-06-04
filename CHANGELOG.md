@@ -8,7 +8,7 @@ All notable changes to this template will be documented in this file
 
 ### Updated
 
-- Upgraded to shadcn/ui v4 release with Radix UI - Vega styling.
+- Upgraded to shadcn/ui v4 release with Radix UI - Luma styling.
 - Refactored all components and refreshed the entire template.
 - Updated dependencies to latest versions.
 
