@@ -1,4 +1,4 @@
-import Link from 'next/dist/client/link'
+import Link from 'next/link'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -26,7 +26,7 @@ const Gallery = ({ galleryImage }: { galleryImage: GalleryImage }) => {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mb-12 space-y-4 text-center sm:mb-16 lg:mb-24'>
-          <Badge variant='outline' className='text-sm font-normal'>
+          <Badge variant='outline' className='h-auto text-sm font-normal'>
             Offers
           </Badge>
 
@@ -40,7 +40,7 @@ const Gallery = ({ galleryImage }: { galleryImage: GalleryImage }) => {
         {/* Gallery Grid */}
         <div className='grid grid-cols-2 gap-6 md:grid-cols-4'>
           {galleryImage.map((image, index) => (
-            <div key={index} className={cn('group relative overflow-hidden rounded-lg', image.className)}>
+            <div key={index} className={cn('group relative overflow-hidden rounded-none', image.className)}>
               <img
                 src={image.src}
                 alt={image.alt}

@@ -15,7 +15,7 @@ const PopularDishes = ({ popularDishes }: { popularDishes: PopularDish }) => {
     <section id='popular-dishes' className='py-8 sm:py-16 lg:py-24'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
-          <Badge variant='outline' className='text-sm font-normal'>
+          <Badge variant='outline' className='h-auto text-sm font-normal'>
             Popular Dishes
           </Badge>
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Favorite meals</h2>
@@ -30,18 +30,18 @@ const PopularDishes = ({ popularDishes }: { popularDishes: PopularDish }) => {
           {popularDishes.map((member, index) => (
             <Card
               key={index}
-              className='hover:border-primary overflow-hidden rounded-none py-0 shadow-none transition-colors duration-300'
+              className='hover:border-primary border-primary/10 overflow-hidden rounded-none border py-0 shadow-none ring-0 transition-colors duration-300'
             >
               <CardContent className='px-0'>
                 <div className='bg-muted'>
                   <img src={member.image} alt={member.alt} className='h-auto w-full' />
                 </div>
                 <div className='space-y-3 px-6 py-5'>
-                  <CardTitle className='text-lg'>{member.name}</CardTitle>
+                  <CardTitle className='text-lg font-semibold'>{member.name}</CardTitle>
                   <Separator />
                   <div className='text-muted-foreground'>
                     <p className='mb-1 text-base font-medium'>{member.type}</p>
-                    <p>{member.description}</p>
+                    <p className='text-base'>{member.description}</p>
                   </div>
                 </div>
               </CardContent>

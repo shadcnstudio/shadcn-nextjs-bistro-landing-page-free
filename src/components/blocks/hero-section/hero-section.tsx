@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { useEffect, useState, useMemo, useCallback } from 'react'
 
 import Link from 'next/link'
 
@@ -28,12 +28,13 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
   const [commentsApi, setCommentsApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
 
+  const plugins = useMemo(() => [Autoplay({ delay: 3000, stopOnInteraction: false })], [])
+
   useEffect(() => {
     if (!mainApi) {
       return
     }
 
-    setCurrent(mainApi.selectedScrollSnap())
     mainApi.on('select', () => {
       const selectedIndex = mainApi.selectedScrollSnap()
 
@@ -84,8 +85,6 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
     [mainApi]
   )
 
-  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }))
-
   return (
     <section
       id='home'
@@ -128,7 +127,7 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
           <Carousel
             className='w-full lg:col-span-2'
             setApi={setMainApi}
-            plugins={[plugin.current]}
+            plugins={plugins}
             opts={{
               loop: true
             }}
@@ -151,13 +150,15 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
               loop: true
             }}
           >
-            <div className='from-background pointer-events-none absolute inset-y-0 left-0 z-1 w-25 bg-gradient-to-r via-85% to-transparent' />
-            <div className='from-background pointer-events-none absolute inset-y-0 right-0 z-1 w-25 bg-gradient-to-l via-85% to-transparent' />
+            <div className='from-background pointer-events-none absolute inset-y-0 left-0 z-1 w-25 bg-linear-to-r via-85% to-transparent' />
+            <div className='from-background pointer-events-none absolute inset-y-0 right-0 z-1 w-25 bg-linear-to-l via-85% to-transparent' />
             <CarouselContent className='my-1 flex'>
               {menudata.map((item, index) => (
                 <CarouselItem
                   key={item.id}
-                  className={cn('basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/3 xl:basis-1/4')}
+                  className={cn(
+                    'basis-1/2 cursor-pointer items-center sm:basis-1/3 md:basis-1/4 lg:basis-1/3 xl:basis-1/4'
+                  )}
                   onClick={() => handleThumbClick(index)}
                 >
                   <div className='relative flex h-33 items-center justify-center'>
@@ -186,10 +187,13 @@ const HeroSection = ({ menudata }: { menudata: MenuData[] }) => {
               {menudata.map(item => (
                 <CarouselItem
                   key={item.id}
-                  className='flex h-full min-h-14 w-full justify-center gap-4 px-6 lg:items-center'
+                  className='flex h-full min-h-14 w-full items-center justify-center gap-4 px-6'
                 >
                   <img src={item.userAvatar} alt={item.imgAlt} className='size-10 rounded-full' />
-                  <Separator orientation='vertical' className='bg-primary hidden !h-6 !w-0.5 !rounded-full sm:block' />
+                  <Separator
+                    orientation='vertical'
+                    className='bg-primary hidden h-6! w-0.5! rounded-full! data-vertical:self-center sm:block'
+                  />
                   <p className='text-card-foreground'>{item.userComment}</p>
                 </CarouselItem>
               ))}

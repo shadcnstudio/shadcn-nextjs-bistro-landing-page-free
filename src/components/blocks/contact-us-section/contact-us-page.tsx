@@ -19,7 +19,7 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         {/* Header */}
         <div className='mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center space-y-4 text-center sm:mb-16 lg:mb-24'>
-          <Badge variant='outline' className='text-sm font-normal'>
+          <Badge variant='outline' className='h-auto text-sm font-normal'>
             Contact Us
           </Badge>
           <h2 className='text-2xl font-semibold md:text-3xl lg:text-4xl'>Get in touch with us </h2>
@@ -47,11 +47,11 @@ const ContactUs = ({ contactInfo }: { contactInfo: ContactInfo }) => {
             <div className='grid gap-6 sm:grid-cols-2'>
               {contactInfo.map((info, index) => (
                 <Card
-                  className='bg-background hover:border-primary rounded-none shadow-none transition-colors duration-300'
+                  className='bg-background hover:border-primary rounded-none border shadow-none ring-0 transition-colors duration-300'
                   key={index}
                 >
                   <CardContent className='flex flex-col items-center gap-4 text-center'>
-                    <Avatar className='size-9 border'>
+                    <Avatar className='size-9'>
                       <AvatarFallback className='bg-transparent [&>svg]:size-5'>
                         <info.icon />
                       </AvatarFallback>
