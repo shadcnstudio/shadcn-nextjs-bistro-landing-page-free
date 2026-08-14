@@ -227,3 +227,22 @@
 [data-slot='button'][data-size='default']:not(.px-6) {
   @apply px-3;
 }
+
+@theme inline {
+  --animate-heartbeat: heartbeat 2s infinite ease-in-out;
+
+  @keyframes heartbeat {
+    0% {
+      box-shadow: 0 0 0 0 var(--heartbeat-color, var(--primary));
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 0 6px transparent;
+      transform: scale(1.03);
+    }
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+      transform: scale(1);
+    }
+  }
+}
